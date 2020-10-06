@@ -2,6 +2,7 @@ let btnGenerate = document.getElementById('btnGenerate');
 let diceContainer = document.getElementById('diceContainer');
 let btnRoll = document.getElementById('btnRoll');
 let btnSum = document.getElementById('btnSum');
+let btnReset = document.getElementById('btnReset')
 let diceArray = [];
 let counter = 0;
 
@@ -48,6 +49,8 @@ btnSum.addEventListener('click', () => {
     })
     alert(sum);
 })
+
+btnReset.addEventListener('click', () => location.reload())
 
 randomDieNum = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
