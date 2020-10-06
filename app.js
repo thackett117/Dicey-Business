@@ -29,7 +29,21 @@ class Die {
   //roll method to determine the value of the die
   roll() {
     this.value = randomDieNum(1, 6);
-    this.div.innerText = this.value;
+    let dieFace = '&#127922'
+    if (this.value === 1) {
+        dieFace = '&#9856'
+    }else if (this.value === 2) {
+        dieFace = '&#9857'
+    }else if (this.value === 3) {
+        dieFace = '&#9858'
+    }else if (this.value === 4) {
+        dieFace = '&#9859'
+    }else if(this.value === 5) {
+        dieFace = '&#9860'
+    }else if (this.value === 6) {
+        dieFace = '&#9861'
+    }
+    this.div.innerHTML = dieFace;
   }
 }
 
