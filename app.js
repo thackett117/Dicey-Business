@@ -12,7 +12,7 @@ class Die {
         this.roll();
         diceContainer.appendChild(this.div);
         diceArray.push(this);
-        console.log(this);
+        this.div.addEventListener('click', () => this.roll());
         
     }
 
@@ -41,8 +41,4 @@ btnSum.addEventListener('click', () => {
 
 randomDieNum = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function sum(a, b) {
-    return a + b;
 }
