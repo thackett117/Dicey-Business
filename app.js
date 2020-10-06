@@ -11,14 +11,15 @@ let counter = 0;
 
 //die class to create a die object
 class Die {
-  constructor() {
+  constructor(value) {
+    this.value = value;
     this.div = document.createElement("div");
     this.div.className = "die";
     this.div.id = counter;
     this.roll();
     diceContainer.appendChild(this.div);
     diceArray.push(this);
-    this.div.addEventListener("click", () => this.roll()); //roll die on click
+    this.div.addEventListener("click", () => this.reRoll()); //roll die on click
     this.div.addEventListener("dblclick", () => {
       //remove die from page
       this.div.remove();
@@ -26,9 +27,8 @@ class Die {
       diceArray.splice(index, 1); //removes the die from the array
     });
   }
-  //roll method to determine the value of the die
+
   roll() {
-    this.value = randomDieNum(1, 6);
     let dieFace = '&#127922'
     if (this.value === 1) {
         dieFace = '&#9856'
@@ -45,18 +45,23 @@ class Die {
     }
     this.div.innerHTML = dieFace;
   }
+  //re-roll changes the value of the die and then runs the roll method again
+  reRoll() {
+    this.value = randomDieNum(1, 6);
+    this.roll();
+  }
 }
 
 //creates new die object
 btnGenerate.addEventListener("click", () => {
-  new Die();
+  new Die(randomDieNum(1, 6));
   counter++;
 });
 
 //rolls all dice again
 btnRoll.addEventListener("click", () => {
   diceArray.forEach((die) => {
-    die.roll();
+    die.reRoll();
   });
 });
 
