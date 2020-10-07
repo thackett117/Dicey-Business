@@ -17,8 +17,8 @@ body {
 
 .die {
     color: #403D58;
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     font-size: 10em;
     display: flex;
     margin: 3px;
