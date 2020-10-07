@@ -16,7 +16,7 @@ class Die {
     this.div = document.createElement("div");
     this.div.className = "die";
     this.div.id = counter;
-    this.roll();
+    this.showDie();
     diceContainer.appendChild(this.div);
     diceArray.push(this);
     this.div.addEventListener("click", () => this.reRoll()); //roll die on click
@@ -28,7 +28,7 @@ class Die {
     });
   }
 
-  roll() {
+  showDie() {
     let dieFace = '&#127922'
     if (this.value === 1) {
         dieFace = '&#9856'
@@ -48,7 +48,7 @@ class Die {
   //re-roll changes the value of the die and then runs the roll method again
   reRoll() {
     this.value = randomDieNum(1, 6);
-    this.roll();
+    this.showDie();
   }
 }
 
