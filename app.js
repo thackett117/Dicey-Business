@@ -1,9 +1,9 @@
 //grabbing all the elements
-let btnGenerate = document.getElementById("btnGenerate");
-let diceContainer = document.getElementById("diceContainer");
-let btnRoll = document.getElementById("btnRoll");
-let btnSum = document.getElementById("btnSum");
-let btnReset = document.getElementById("btnReset");
+const btnGenerate = document.getElementById("btnGenerate"),
+  diceContainer = document.getElementById("diceContainer"),
+  btnRoll = document.getElementById("btnRoll"),
+  btnSum = document.getElementById("btnSum"),
+  btnReset = document.getElementById("btnReset");
 
 //global array to store dice objects
 let diceArray = [];
