@@ -60,7 +60,7 @@ btnGenerate.addEventListener("click", () => {
 
 //rolls all dice again
 btnRoll.addEventListener("click", () => {
-  diceArray.forEach((die) => {
+  diceArray.forEach( die => {
     die.reRoll();
   });
 });
@@ -68,8 +68,8 @@ btnRoll.addEventListener("click", () => {
 //takes the sum of all the dice in the array
 btnSum.addEventListener("click", () => {
   let sum = 0;
-  diceArray.forEach((die) => {
-    sum = sum + die.value;
+  diceArray.forEach( die => {
+    sum += die.value;
   });
   alert(sum);
 });
